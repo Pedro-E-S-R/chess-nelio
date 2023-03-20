@@ -3,6 +3,7 @@ package Applications;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPositon;
 import chess.Color;
@@ -45,7 +46,12 @@ public class UI {
 			throw new InputMismatchException("Error reading ChessPostion. valid vvalues are from a1 to h8");
 		}
 	}
-	
+	public static void printMach(ChessMatch chessMatch) {
+		printBoard(chessMatch.getPieces());
+		System.out.println();
+		System.out.println("Turn : " + chessMatch.getTurn());
+		System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+	}
 	public static void printBoard(ChessPiece[][] pieces) {
 		for(int i=0;i<pieces.length;i++) {
 			System.out.print(8 - i + " ");
