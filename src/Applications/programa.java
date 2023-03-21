@@ -22,7 +22,7 @@ public class programa {
 		List<ChessPiece> captured = new ArrayList<>();
 		
 		
-		while (true) {
+		while (!chessmatch.getCheckmate()) {
 			try {
 				UI.clearScreen();
 				UI.printMach(chessmatch, captured);
@@ -58,6 +58,8 @@ public class programa {
 			}
 			
 		}
+		UI.clearScreen();
+		UI.printMach(chessmatch, captured);
 		
 		
 	}
