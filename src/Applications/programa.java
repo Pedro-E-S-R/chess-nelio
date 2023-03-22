@@ -44,6 +44,15 @@ public class programa {
 				if( capturedPiece != null) {
 					captured.add(capturedPiece);
 				}
+				if(chessmatch.getPromoted() != null) {
+					System.out.print("Enter piece pomotion (B/N/R/Q): ");
+					String type = sc.nextLine().toUpperCase();
+					while(!type.equals("B") && !type.equals("R") && !type.equals("N") && !type.equals("Q")) {
+						System.out.print("Invalid value! Enter piece pomotion (B/N/R/Q): ");
+						type = sc.nextLine().toUpperCase();
+					}
+					chessmatch.replacePromotedPiece(type);
+				}
 				
 			}
 			catch(chessException e) {
